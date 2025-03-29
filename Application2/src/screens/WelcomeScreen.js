@@ -1,22 +1,29 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 import { Colors } from '../../constants/colors'
+import Button from '../ui/Button'
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
+
+  function navigateToRecipeList() {
+    navigation.navigate('Recipe')
+  }
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
       <Image source={require("../../images/Mixed.jpeg")} style={styles.image} />
       <Text style={styles.text1}>40k + Premium recipes</Text>
       <Text style={styles.text2}>Cook Like a Chef</Text>
+
+      <Button onPress={navigateToRecipeList}>Let's Go</Button>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   image: {
-    width: '100%',
-    height: 400,
-    marginTop: 30
+    width: '99%',
+    height: 390,
+    marginTop: 70
   },
   text1: {
     color: Colors.textColor1,
