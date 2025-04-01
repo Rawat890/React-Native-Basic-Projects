@@ -1,0 +1,81 @@
+1. Managed Workflow (Expo)
+Definition: A streamlined way to build React Native apps using Expo, which abstracts away much of the native code complexity.
+
+Key Features:
+
+Uses Expo CLI (npx create-expo-app).
+
+No direct access to native code (iOS/Android) unless you "eject."
+
+Comes with pre-installed libraries (e.g., Camera, Notifications, Maps).
+
+Over-the-air (OTA) updates allow pushing JS updates without app store approval.
+
+Easier setup (no Xcode/Android Studio needed for basic development).
+
+Limited to Expo-supported native modules.
+
+Best For:
+
+Beginners or small projects.
+
+Apps that don't require heavy native customization.
+
+Quick prototyping.
+
+2. Bare Workflow (React Native CLI)
+Definition: A more flexible approach where you have full control over native code.
+
+Key Features:
+
+Uses React Native CLI (npx react-native init).
+
+Full access to native code (iOS Podfile, Android build.gradle).
+
+Can use any native module (Expo or non-Expo).
+
+No dependency on Expo SDK.
+
+Requires Xcode/Android Studio for native builds.
+
+No OTA updates by default (unless manually integrated).
+
+Best For:
+
+Apps needing custom native code.
+
+Projects requiring third-party native libraries not supported by Expo.
+
+Advanced developers who need full control.
+
+Comparison Table
+Feature	Managed Workflow (Expo)	Bare Workflow (React Native CLI)
+Native Code Access	Limited (unless ejected)	Full access
+CLI Tool	expo-cli / create-expo-app	react-native-cli
+Native Modules	Only Expo-supported	Any native module
+OTA Updates	Supported	Requires manual setup (e.g., CodePush)
+Ease of Setup	Very easy (no Xcode/Android Studio needed)	Requires native tooling
+Best For	Beginners, quick prototypes	Complex apps, custom native code
+When to Choose Which?
+Use Managed Workflow if:
+
+You're new to React Native.
+
+Your app doesn't need custom native code.
+
+You want faster development with Expo's pre-built modules.
+
+Use Bare Workflow if:
+
+You need full control over native code.
+
+You want to use unsupported native libraries.
+
+You're building a complex, production-grade app.
+
+Can You Switch?
+Ejecting from Managed to Bare:
+Expo allows ejecting (expo prebuild or expo run:[ios/android]) to access native code, but this is irreversible.
+
+Adding Expo to Bare:
+You can use expo-modules in a bare project for some Expo features

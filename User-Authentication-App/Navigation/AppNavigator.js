@@ -12,9 +12,14 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
-        headerShown: true
+        headerShown: true,
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: '#6DB1EA'
+        }
+
       }}>
-        <Stack.Screen component={LogInScreen} name='Login' />
+        <Stack.Screen component={LogInScreen} name='Login Form' />
         <Stack.Screen component={SignUpScreen} name='SignUp' />
         <Stack.Screen component={WelcomeScreen} name='Welcome' />
       </Stack.Navigator>
