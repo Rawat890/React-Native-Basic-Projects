@@ -58,6 +58,7 @@ export default function CameraTab() {
       const photo = await cameraRef.current.takePictureAsync({
         quality: 1,
         base64: false,
+        exif:false
         
       });
   
