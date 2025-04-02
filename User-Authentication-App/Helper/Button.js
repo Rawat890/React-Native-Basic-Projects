@@ -4,7 +4,7 @@ import { View, Pressable, Text, StyleSheet } from 'react-native'
 const Button = ({ onPress, label }) => {
   return (
     <View style={styles.buttonView}>
-      <Pressable onPress={onPress} style={styles.button}>
+      <Pressable onPress={onPress} style={styles.button} onPressIn={onPress}>
         <Text style={styles.label}>{label}</Text>
       </Pressable>
     </View>
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    width: '50%',
-    marginTop: 20,
+    width: '100%',
+    marginTop: 10,
     padding: 10,
     borderRadius: 8,
     backgroundColor: '#BE5C69',

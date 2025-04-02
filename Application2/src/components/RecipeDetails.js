@@ -2,8 +2,10 @@ import { FontAwesome } from '@expo/vector-icons'
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, Pressable, FlatList, Image } from 'react-native'
 import { Colors } from '../../constants/colors'
+import { useNavigation } from '@react-navigation/native'
 
 const RecipeDetails = () => {
+  const navigation = useNavigation();
   const [recipes, setRecipes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -17,7 +19,7 @@ const RecipeDetails = () => {
         return res.json()
       })
       .then(data => {
-        console.log("Fetched Recipes:", data)
+        // console.log("Fetched Recipes:", data)
         if (data && data.recipes) {
           setRecipes(data.recipes)
         } else {
@@ -55,13 +57,16 @@ const RecipeDetails = () => {
     )
   }
 
+  function navigateToDetails(item) {
+    navigation.navigate('RecipeDetails', { recipe: item })
+  }
   return (
     <View style={styles.container}>
       <FlatList showsVerticalScrollIndicator={false} numColumns={2}
         data={recipes}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <Pressable style={({ pressed }) => [styles.recipeContainer, pressed && styles.pressed]}>
+          <Pressable style={({ pressed }) => [styles.recipeContainer, pressed && styles.pressed]} onPress={() => navigateToDetails(item)} >
             <Image
               source={{ uri: item.image }}
               style={styles.recipeImage}

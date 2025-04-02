@@ -1,34 +1,41 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import Input from '../Helper/Input'
 import Button from '../Helper/Button'
+import SignUpInput from '../Helper/SignUpInput'
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
+  const navigateToWelcome = () => {
+    navigation.navigate('Welcome')
+  }
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       {/* <Input placeholder="Enter userName..." label="UserName" /> */}
-      <Input placeholder="Enter UserName..." label="UserName" />
-      <Input placeholder="Enter email..." label="Email" />
-      <Input placeholder="confirm email..." label=" Confirm Email" />
-      <Input placeholder="Enter password..." label="Password" />
-      <Input placeholder="confirm password..." label="Confirm Password" />
-      <Button label="Log In" />
-      <Button label="Sign Up" />
-    </View>
+      <SignUpInput placeholder="Enter email..." label="Email" />
+      <SignUpInput placeholder="confirm email..." label=" Confirm Email" />
+      <SignUpInput placeholder="Enter password..." label="Password" />
+      <SignUpInput placeholder="confirm password..." label="Confirm Password" />
+      <Button label="Sign Up" onPress={navigateToWelcome} />
+
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     elevation: 4,
+    marginTop: 70,
+    borderRadius: 12,
     justifyContent: 'center',
-    height: 450,
-    width: '85%',
-    marginLeft: 28,
+    width: '90%',
+    height: 520,
+    marginLeft: 19,
     padding: 10,
-    marginTop: 80,
-    backgroundColor: '#7850C0'
+    backgroundColor: 'white',
   },
+  buttonContainer: {
+    flexDirection: 'row', justifyContent: 'space-evenly', width: '100%'
+  }
 
 })
 

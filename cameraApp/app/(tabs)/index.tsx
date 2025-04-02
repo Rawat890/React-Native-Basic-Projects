@@ -150,6 +150,9 @@ return(
 
 
 const styles = StyleSheet.create({
+  text:{
+
+  },
 container:{
   flex:1,
   backgroundColor:'#000'
