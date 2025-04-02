@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Weather from './Expo-App/Weather';
+import AppNavigator from './Expo-App/Navigation/AppNavigator';
 
 const API_KEY = '1476620bdb5cd4f97c18b55ae27b4eff'
 const API = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}'
@@ -7,8 +9,7 @@ const API = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <AppNavigator />
     </View>
   );
 }
@@ -16,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'grey',
     alignItems: 'center',
     justifyContent: 'center',
   },

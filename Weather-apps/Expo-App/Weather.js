@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import * as Location from 'expo-status-bar'
-import { View, Text } from 'react-native'
+import { View, Text, ActivityIndicator } from 'react-native'
+import WeatherData from './components/WeatherData'
 
 const API_KEY = '1476620bdb5cd4f97c18b55ae27b4eff'
 
@@ -28,13 +29,23 @@ const Weather = () => {
   }
 
   useEffect(() => {
-    fetchWeatherData('Mumbai');
+    fetchWeatherData('Delhi');
     console.log(weatherData)
   }, [])
 
+
+  if (!loading) {
+    return <ActivityIndicator size={50} color='blue' />
+  } else if (weatherData === null) {
+    return <View>
+      <Text>Hey</Text>
+    </View>
+  }
+
+
   return (
-    <View>
-      <Text>Weather</Text>
+    <View style={{ width: '100%', height: '100%' }}>
+      <WeatherData data={weatherData} fetchedData={fetchWeatherData} />
     </View>
   )
 }
