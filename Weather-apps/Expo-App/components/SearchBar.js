@@ -6,18 +6,19 @@ const SearchBar = ({ searchCity }) => {
   return (
     <View style={styles.search}>
       <TextInput style={{ fontSize: 16 }} placeholder='Enter city name......' value={cityName} onChangeText={(text) => setCityName(text)} />
-      <EvilIcons name='search' color='black' size={34} onPress={() => searchCity(cityName)} />
+      <EvilIcons name='search' color='black' size={35} onPress={() => searchCity(cityName)} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   search: {
-    marginTop: 40, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center',
-    borderBottomWidth: 2,
-    borderBottomColor: '', width: 320,
+    marginTop: 10, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center',
+    width: 320,
     width: '96%',
-    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'blue',
+    borderRadius: 50,
     fontSize: 20, color: 'purple', fontWeight: 'bold',
     padding: 2,
     marginBottom: 10

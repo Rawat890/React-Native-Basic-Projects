@@ -31,9 +31,9 @@ const WeatherData = ({ data, fetchedData }) => {
   return (
     <View style={styles.container}>
       <SearchBar searchCity={fetchedData} />
-      <Text style={{ fontSize: 34, fontWeight: 'bold', marginBottom: 5, marginTop: 10 }}>{name.toUpperCase()}</Text>
+      <Text style={{ fontSize: 34, fontWeight: 'bold', marginBottom: 5, marginTop: 0 }}>{name.toUpperCase()}</Text>
       <ImageBackground source={backgroundImage} style={styles.background} />
-      <Text style={{ color: 'purple', fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
+      <Text style={{ color: 'purple', fontSize: 20, fontWeight: 'bold', marginBottom: 4 }}>
         {description[0].toUpperCase().concat(description.slice(1))}
       </Text>
 
@@ -54,11 +54,11 @@ const WeatherData = ({ data, fetchedData }) => {
 
 const styles = StyleSheet.create({
   sun: {
-    flexDirection: 'row', justifyContent: 'space-around', width: '100%', marginBottom: 15, marginTop: 10
+    flexDirection: 'row', justifyContent: 'space-around', width: '100%', marginBottom: 5, marginTop: 1
   },
   container: {
     flex: 1,
-    backgroundColor: '#8AD4FD',
+    backgroundColor: '#5FD6EB',
     alignItems: 'center'
   },
   background: {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     width: '90%',
     height: 200,
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 14
   }
 
 })

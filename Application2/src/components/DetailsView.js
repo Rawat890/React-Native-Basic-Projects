@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomColor: 'grey', borderBottomWidth: 3,
     borderTopColor: 'grey', borderTopWidth: 3,
+
   }
 
 });

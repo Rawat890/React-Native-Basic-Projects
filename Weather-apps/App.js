@@ -8,15 +8,15 @@ const API = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
+      <StatusBar style='light' />
       <AppNavigator />
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'grey',
     alignItems: 'center',
     justifyContent: 'center',
